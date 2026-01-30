@@ -391,31 +391,9 @@ body {
   color: white;
 }
 ```
-
-2. Save the file
-
 ---
 
-## Step 8: Add Remaining Styles
-
-1. Copy the complete CSS file from the project repository
-
-2. The full file includes styles for:
-   - Search results info
-   - Pagination
-   - Pokemon detail page
-   - Stat bars
-   - Error page
-   - Footer
-   - Responsive design
-
-3. Save the file
-
-> **Note:** The complete CSS file is available in the repository at `public/css/style.css`
-
----
-
-## Step 9: Verify Your CSS
+## Step 8: Verify Your CSS
 
 Your CSS file should style:
 - Header with Pokedex lights
@@ -427,7 +405,7 @@ Your CSS file should style:
 
 ---
 
-## Step 10: Commit Your Progress
+## Step 9: Commit Your Progress
 
 1. Stage your changes:
 
