@@ -84,3 +84,33 @@ export const searchPokemon = async (query, limit = config.pagination.maxSearchLi
     throw new Error(`Failed to search Pokemon: ${error.message}`);
   }
 };
+/**
+ * Fetch all Pokemon types
+ * @returns {Promise<Array>} - List of types
+ */
+export const getPokemonTypes = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/type`);
+    return response.data.results;
+  } catch (error) {
+    throw new Error(`Failed to fetch Pokemon types: ${error.message}`);
+  }
+};
+
+/**
+ * Fetch all Pokemon of a specific type
+ * @param {string} typeName - Type name (e.g., "electric")
+ * @returns {Promise<Array|null>} - List of Pokemon or null if type not found
+ */
+export const getPokemonByType = async (typeName) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/type/${typeName.toLowerCase()}`);
+    // Extract just the Pokemon info from the nested structure
+    return response.data.pokemon.map((p) => p.pokemon);
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      return null;
+    }
+    throw new Error(`Failed to fetch Pokemon by type: ${error.message}`);
+  }
+};
